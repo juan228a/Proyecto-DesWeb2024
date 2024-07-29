@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/about.css">
+    <!-- Incluye el CSS de Mapbox GL -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+            border: 2px solid #809671;
+            border-radius: 10px;
+        }
+    </style>
+    <title>Prest-AR | Ubicaciones</title>
+</head>
+<body>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                  
+                </div>
+
+                <div class="container-logo">
+                 
+                    <h1 class="logo"><a href="index.html">Prest-AR</a></h1>
+                </div>
+
+                <div class="container-user">
+                  
+                    <i class="fa-solid fa-user"></i>
+                    <span class="logIn"><a href="logIn.html">Log In</a></span>
+                    <span class="signUp"><a href="signUp.html">Sign UP</a></span>
+        
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a  href="PoliticaDeSeg.html">Politica de Seguridad</a></li>
+                    <li><a href="aboutUs.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html">Contactame</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
+
+                </ul>
+
+                <form class="search-form">
+                    <input type="search" placeholder="Buscar..." />
+                    <button class="btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+<section>
+    <div class="heading">
+        <h1>Ubicaciones</h1>
+    </div>
+
+    <div class="conteiner">
+         <section class="about">
+            <div class="about-image">
+                <img src="../css/imagenes/equipo.jpg" alt="">
+
+
+            <div id="map"></div>
+    <!-- Incluye el JavaScript de Mapbox GL -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <script src="../js/app.js"></script>
+
+        </div>
+</section>
+
+<br><br><br><br><br><br>
+<br>
+<br>
+
+<footer class="foot"><b>COPYRIGHT 2024</b></footer>
+
+
+</body>
+<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+</html>

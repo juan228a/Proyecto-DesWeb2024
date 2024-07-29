@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Herramienta</title>
+    <link rel="stylesheet" href="../about.css">
+</head>
+<body>
+    <section>
+        <div class="heading">
+            <h1>Ingresar Herramienta</h1>
+        </div>
+        <div class="container">
+            <form action="guardar_herramienta.php" method="post">
+                <label for="propietario">Nombre del Dueño:</label>
+                <input type="text" id="propietario" name="propietario" required><br><br>
+
+                <label for="nombreherramienta">Nombre de la Herramienta:</label>
+                <input type="text" id="nombreherramienta" name="nombreherramienta" required><br><br>
+
+                <label for="descripcionherramienta">Descripción de la Herramienta:</label>
+                <textarea id="descripcionherramienta" name="descripcionherramienta" required></textarea><br><br>
+
+                <label for="direccionherramienta">Dirección:</label>
+                <input type="text" id="direccionherramienta" name="direccionherramienta" required>
+                <button type="button" onclick="getLocation()">Detectar mi ubicación</button><br><br>
+
+                <label for="latitud">Latitud:</label>
+                <input type="text" id="latitudherramienta" name="latitudherramienta" readonly><br><br>
+
+                <label for="longitud">Longitud:</label>
+                <input type="text" id="longitudherramienta" name="longitudherramienta" readonly><br><br>
+
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
+    </section>
+
+    <footer class="foot"><b>COPYRIGHT 2024</b></footer>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                alert("Geolocalización no es soportada por este navegador.");
+            }
+        }
+
+        function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            document.getElementById("latitudherramienta").value = lat;
+            document.getElementById("longitudherramienta").value = lon;
+
+            const geocoder = new google.maps.Geocoder();
+            const latLng = new google.maps.LatLng(lat, lon);
+            geocoder.geocode({ 'location': latLng }, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        document.getElementById("direccionherramienta").value = results[0].formatted_address;
+                    } else {
+                        alert("No se encontraron resultados.");
+                    }
+                } else {
+                    alert("Geocoder falló debido a: " + status);
+                }
+            });
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("El usuario denegó la solicitud de geolocalización.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("La información de ubicación no está disponible.");
+                    break;
+                case error.TIMEOUT:
+                    alert("La solicitud para obtener la ubicación del usuario expiró.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("Ocurrió un error desconocido.");
+                    break;
+            }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_API&callback=initMap" async defer></script>
+</body>
+</html>

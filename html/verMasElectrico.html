@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/verMasMan.css">
+    <title>Herramientas Electricas</title>
+</head>
+<body>
+    
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="container-logo">
+                    <h1 class="logo"><a href="/">Prest-AR</a></h1>
+                </div>
+                <div class="container-user">
+                    <h2>¡Hola Usuario!</h2>
+                </div>
+            </div>
+        </div>
+         <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a  href="PoliticaDeSeg.html">Politica de Seguridad</a></li>
+                    <li><a href="aboutUs.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html">Contactame</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
+                    
+                </ul>
+                <form class="search-form">
+                    <input type="search" placeholder="Buscar..." />
+                    <button class="btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="contenido">
+            <div class="mostrador" id="mostrador">
+                <!-- Herramientas se agregarán aquí dinámicamente -->
+            </div>
+        </section>
+        <section class="formulario" id="formulario" style="display: none;">
+            <form  action="https://formsubmit.co/prestar2024@gmail.com" method="post" >
+                <h2>Alquilar Herramienta</h2>
+                <p  id="toolName"></p>
+                <input type="hidden" id="toolPrice" name="toolPrice">
+                <label for="rentalDays">Días de alquiler:</label>
+                <input type="number" id="rentalDays" name="rentalDays" required>
+                <label for="customerName">Nombre:</label>
+                <input type="text" id="customerName" name="customerName" required>
+                <label for="customerEmail">Email:</label>
+                <input type="email" id="customerEmail" name="CustomerEmail" required>
+                <button type="submit">Alquilar</button>
+                <button type="button" onclick="cancelForm()">Cancelar</button>
+
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+                    <input type="hidden" name="_captcha" value="">
+            </form>
+        </section>
+    </main>
+    <footer class="foot"><b>COPYRIGHT 2024</b></footer>
+    <script src="../js/carritoElectr.js"></script>
+
+</body>
+</html>

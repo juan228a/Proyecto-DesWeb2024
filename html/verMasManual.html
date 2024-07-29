@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/verMasMan.css">
+    <title>Herramientas Manuales</title>
+</head>
+<body>
+
+      <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="container-logo">
+                    <h1 class="logo"><a href="/">Prest-AR</a></h1>
+                </div>
+                <div class="container-user">
+                    <h2>¡Hola Usuario!</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a  href="PoliticaDeSeg.html">Politica de Seguridad</a></li>
+                    <li><a href="aboutUs.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html">Contactame</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
+                    
+                </ul>
+                <form class="search-form">
+                    <input type="search" placeholder="Buscar..." />
+                    <button class="btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="contenido">
+            <div class="mostrador" id="mostrador">
+                <!-- Herramientas se agregarán aquí dinámicamente -->
+            </div>
+        </section>
+        <!-- <section class="formulario" id="formulario" style="display: none;"> -->
+            <form id="rentForm" action="https://formsubmit.co/prestar2024@gmail.com" method="post">
+                <h2>Alquilar Herramienta</h2>
+                <p id="toolName"></p>
+                <label for="rentalDays"  >Días De Alquiler</label>
+                <input type="hidden" id="toolPrice" name="DíasDeAlquiler">
+                <label for="customerName" >Nombre</label>
+                <input type="number" id="rentalDays" required>
+                <label for="customerEmail"  >Email</label>
+                <input type="text" id="customerName"  id="Nombre" name="Nombre" required>
+                <input type="email" id="customerEmail" id="Email" name="Email" required>
+                <button type="submit"
+                id="Alquilar">Alquilar</button>
+                <button type="button" onclick="cancelForm()">Cancelar</button>
+            </form>
+        <!-- </section> -->
+    </main>
+    
+    <footer class="foot"><b>COPYRIGHT 2024</b></footer>
+    
+    <script src="../js/carrito.js"></script>
+
+
+</body>
+</html>

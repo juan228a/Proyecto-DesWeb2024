@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prest-AR | Sign Up</title>
+    <link rel="stylesheet" href="../css/signUp2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="">
+            <h1>Registro 2/2</h1>
+            <div class="input-box">
+                <div class="input-feild">
+                    <input type="text" placeholder="Descripcion" required> <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-feild">
+                    <input type="text" placeholder="Facebook" required> <i class='bx bxs-phone'></i>
+                </div>
+
+            </div>
+            <div class="input-box">
+                <div class="input-feild">
+                    <input type="text" placeholder="Twitter" required> <i class='bx bxs-phone'></i>
+                </div>
+                <div class="input-feild">
+                    <input type="text" placeholder="Instagram" required> <i class='bx bxs-phone'></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-feild">
+                    <input type="text" placeholder="Direccion(Local)" required> <i class='bx bxs-home'></i>
+                </div>
+                <div class="input-feild">
+                    <input type="text" placeholder="Direccion(Hogar)" required> <i class='bx bxs-home'></i>
+                </div>
+            </div>
+            <div class="input-box">
+                    <div class="input-feild">
+                    <input type="file" id="input-imagen" name="imagen" accept="image/*" form id="form-imagen" ectype="multipart/form-data" placeholder="Subir Imagen" required> <i class='bx bxs-camera'></i>
+                </div>
+            </form>
+                 <div id="preview">
+
+                </div>
+            </div>
+       
+
+            <label><input type="checkbox"><br>Declaro que la información anterior proporcionada es verdadera y correcta.</label>
+            <button type="submit" class="btn">Registrarme</a></button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('form-imagen').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+
+          
+            var fileInput = document.getElementById('input-imagen');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                var imgElement = document.createElement('img');
+                imgElement.src = event.target.result;
+                document.getElementById('preview').innerHTML = '';
+                document.getElementById('preview').appendChild(imgElement);
+            };
+
+            reader.readAsDataURL(file);
+        });
+
+        </script>
+
+
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro 2/2</title>
+    <link rel="stylesheet" href="../signUp.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="complete_signup.php" method="post" enctype="multipart/form-data">
+            <h1>Registro 2/2</h1>
+            <div class="input-box">
+                <div class="input-feild">
+                    <input type="text" name="descripcion" placeholder="Descripcion" required> <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-feild">
+                    <input type="text" name="red1" placeholder="Facebook" required> <i class='bx bxs-phone'></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-feild">
+                    <input type="text" name="red2" placeholder="Twitter" required> <i class='bx bxs-phone'></i>
+                </div>
+                <div class="input-feild">
+                    <input type="text" name="red3" placeholder="Instagram" required> <i class='bx bxs-phone'></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-feild">
+                    <input type="text" name="direccion_local" placeholder="Direccion(Local)" required> <i class='bx bxs-home'></i>
+                </div>
+                <div class="input-feild">
+                    <input type="text" name="direccion_hogar" placeholder="Direccion(Hogar)" required> <i class='bx bxs-home'></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-feild">
+                    <input type="file" id="input-imagen" name="imagen" accept="image/*" required> <i class='bx bxs-camera'></i>
+                </div>
+            </div>
+            <div id="preview"></div>
+            <label>
+                <input type="checkbox" required>
+                Declaro que la información anterior proporcionada es verdadera y correcta.
+            </label>
+            <button type="submit" class="btn">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
